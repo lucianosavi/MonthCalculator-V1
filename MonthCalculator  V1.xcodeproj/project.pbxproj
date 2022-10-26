@@ -13,6 +13,8 @@
 		0E03CC3E290813DB005F32D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E03CC3C290813DB005F32D6 /* Main.storyboard */; };
 		0E03CC40290813DD005F32D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E03CC3F290813DD005F32D6 /* Assets.xcassets */; };
 		0E03CC43290813DD005F32D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E03CC41290813DD005F32D6 /* LaunchScreen.storyboard */; };
+		0ED4AFF029082C8800DF3E7D /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4AFEF29082C8800DF3E7D /* CalculatorViewModel.swift */; };
+		0ED4AFF22908459A00DF3E7D /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4AFF12908459A00DF3E7D /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0E03CC3F290813DD005F32D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E03CC42290813DD005F32D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E03CC44290813DD005F32D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ED4AFEF29082C8800DF3E7D /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		0ED4AFF12908459A00DF3E7D /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		0E03CC2A290813DB005F32D6 = {
 			isa = PBXGroup;
 			children = (
+				0ED4AFF32908486C00DF3E7D /* Calculator */,
 				0E03CC35290813DB005F32D6 /* MonthCalculator  V1 */,
 				0E03CC34290813DB005F32D6 /* Products */,
 			);
@@ -58,13 +63,22 @@
 			children = (
 				0E03CC36290813DB005F32D6 /* AppDelegate.swift */,
 				0E03CC38290813DB005F32D6 /* SceneDelegate.swift */,
-				0E03CC3A290813DB005F32D6 /* ViewController.swift */,
 				0E03CC3C290813DB005F32D6 /* Main.storyboard */,
 				0E03CC3F290813DD005F32D6 /* Assets.xcassets */,
 				0E03CC41290813DD005F32D6 /* LaunchScreen.storyboard */,
 				0E03CC44290813DD005F32D6 /* Info.plist */,
 			);
 			path = "MonthCalculator  V1";
+			sourceTree = "<group>";
+		};
+		0ED4AFF32908486C00DF3E7D /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				0ED4AFF12908459A00DF3E7D /* CalculatorModel.swift */,
+				0E03CC3A290813DB005F32D6 /* ViewController.swift */,
+				0ED4AFEF29082C8800DF3E7D /* CalculatorViewModel.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E03CC3B290813DB005F32D6 /* ViewController.swift in Sources */,
+				0ED4AFF22908459A00DF3E7D /* CalculatorModel.swift in Sources */,
 				0E03CC37290813DB005F32D6 /* AppDelegate.swift in Sources */,
+				0ED4AFF029082C8800DF3E7D /* CalculatorViewModel.swift in Sources */,
 				0E03CC39290813DB005F32D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
