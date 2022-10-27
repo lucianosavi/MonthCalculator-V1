@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     static var shared = ViewController()
     
     
+    
     lazy var topLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,14 +47,28 @@ class ViewController: UIViewController {
     lazy var valueTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "digite o valor"
-        
+        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .systemCyan
         return textField
     }()
+
     
-    lazy var monthTextField: UITextField = {
+    lazy var pickerTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "digite o mês"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "digite o mês inicial"
+        textField.inputView = monthPicker
+        
+        
+        return textField
+    }()
+    
+    
+    
+    lazy var parcelTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "digite a quantidade de parcelas"
         textField.textColor = .systemCyan
         return textField
     }()
@@ -69,12 +84,14 @@ class ViewController: UIViewController {
     }()
     
      lazy var monthPicker: UIPickerView = {
-        let view = UIPickerView()
-        view.backgroundColor = .clear
-        view.delegate = self
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let pickerView = UIPickerView()
+        pickerView.backgroundColor = .clear
+        pickerView.delegate = self
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        return pickerView
     }()
+    
+    
     
     
     lazy var topStackView: UIStackView = {
@@ -90,7 +107,7 @@ class ViewController: UIViewController {
     
     lazy var bottomStackView: UIStackView = {
         
-        let stackView = UIStackView(arrangedSubviews: [valueTextField,monthPicker,submitButton])
+        let stackView = UIStackView(arrangedSubviews: [valueTextField,pickerTextField,parcelTextField,submitButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .leading
@@ -111,8 +128,8 @@ class ViewController: UIViewController {
         
         view.addSubview(topStackView)
         view.addSubview(bottomStackView)
-        
         setupConstrants()
+        
         
     }
     
@@ -167,6 +184,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let chooseOption: String = Month.shared.pickerOptions[row]
         Month.shared.month = chooseOption
+        pickerTextField.text = chooseOption
        
     }
 }
