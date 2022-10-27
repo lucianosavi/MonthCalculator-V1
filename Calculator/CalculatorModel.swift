@@ -9,7 +9,7 @@ import Foundation
 
 struct Values{
     var valueInput:Int?
-    
+    var parcels:Int?
     static var shared = Values()
        
 

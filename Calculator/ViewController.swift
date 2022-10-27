@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         textField.textColor = .systemCyan
         return textField
     }()
-
+    
     
     lazy var pickerTextField: UITextField = {
         let textField = UITextField()
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         return button
     }()
     
-     lazy var monthPicker: UIPickerView = {
+    lazy var monthPicker: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.backgroundColor = .clear
         pickerView.delegate = self
@@ -136,13 +136,17 @@ class ViewController: UIViewController {
     @objc func saveValue() {
         
         guard let intValue = Int(valueTextField.text ?? "0") else {
-            print("Unable to unwrap")
+            print("Unable to unwrap value")
+            return
+        }
+        guard let parcelsNumber = Int(parcelTextField.text ?? "0") else {
+            print("Unable to unwrap parcels")
             return
         }
         Values.shared.valueInput = intValue
-        
+        Values.shared.parcels = parcelsNumber
         CalculatorViewModel.shared.getMonth()
-        print("teste picker",Month.shared.month)
+        print("teste picker",Month.shared.month,Values.shared.parcels)
     }
     
     func setupConstrants () {
@@ -185,7 +189,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let chooseOption: String = Month.shared.pickerOptions[row]
         Month.shared.month = chooseOption
         pickerTextField.text = chooseOption
-       
+        
     }
 }
 

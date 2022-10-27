@@ -14,7 +14,16 @@ class CalculatorViewModel {
             print("Unable to unwrap on addData")
             return
         }
+        guard let parcelsNumber = Values.shared.parcels else{
+            print("Unable to unwrap on parcel")
+            return
+        }
         if UserDefaults.standard.value(forKey: month) != nil{
+            
+            for i in parcelsNumber...Month.shared.pickerOptions.count {
+                print("teste")
+            }
+            
             let result = UserDefaults.standard.value(forKey: month) as! Int + value
             
             UserDefaults.standard.set(result, forKey: month)
@@ -23,61 +32,61 @@ class CalculatorViewModel {
             UserDefaults.standard.set(value, forKey: month)
         }
     }
-        
+    
     func getMonth(){
         
         switch Month.shared.month {
             
         case "Janeiro":
-           
-        addData(month: "Janeiro")
+            
+            addData(month: "Janeiro")
             
         case "Fevereiro":
-           
-        addData(month: "Fevereiro")
+            
+            addData(month: "Fevereiro")
             
         case "Março":
-           
-        addData(month: "Março")
+            
+            addData(month: "Março")
             
         case "Abril":
-           
-        addData(month: "Abril")
+            
+            addData(month: "Abril")
             
         case "Junho":
-           
-        addData(month: "Junho")
+            
+            addData(month: "Junho")
             
         case "Julho":
-           
-        addData(month: "Julho")
+            
+            addData(month: "Julho")
             
         case "Agosto":
-           
-        addData(month: "Agosto")
-        
+            
+            addData(month: "Agosto")
+            
         case "Setembro":
-           
-        addData(month: "Setembro")
+            
+            addData(month: "Setembro")
             
         case "Outubro":
-           
-        addData(month: "Outubro")
+            
+            addData(month: "Outubro")
             
         case "Novembro":
-           
-        addData(month: "Novembro")
+            
+            addData(month: "Novembro")
             
         case "Dezembro":
-           
-        addData(month: "Dezembro")
             
-         
+            addData(month: "Dezembro")
+            
+            
         default :
             print("Unable to save")
             
         }
-               
+        
         
     }
     
